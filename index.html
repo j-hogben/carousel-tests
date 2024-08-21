@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="stylesheet" href="styles.css" />
+    <script src="./carousel.js" defer></script>
 
     <title>Carousel Tests</title>
   </head>
@@ -64,15 +65,20 @@
         </li>
       </ul>
 
+      <!-- DISPLAY FOR CURRENT SLIDE INDEX -->
+      <div class="indexDisplay">
+        <p id="currentSlideIndexDisplay"></p>
+      </div>
+
       <!-- CAROUSEL NAVIGATION BUTTONS -->
-       <div class="carousel__buttons-container">
+      <div class="carousel__buttons-container">
         <button class="carousel__button">
-          <img src="./assets/icon-arrow-left.svg" alt="">
+          <img src="./assets/icon-arrow-left.svg" alt="" />
         </button>
         <button class="carousel__button">
-          <img src="./assets/icon-arrow-right.svg" alt="">
+          <img src="./assets/icon-arrow-right.svg" alt="" />
         </button>
-       </div>
+      </div>
     </div>
   </body>
 </html>
