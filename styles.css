@@ -3,6 +3,7 @@
   --carousel-image-width: 270px;
   --carousel-padding-inline: calc((100% - var(--carousel-image-width)) / 2);
   --carousel-gap: 15px;
+  --carousel-image-border-radius: 0.625rem;
 }
 
 * {
@@ -24,13 +25,14 @@ body {
 
 .carousel {
   padding-inline: var(--carousel-padding-inline);
-  height: var(--carousel-image-height);
+  padding-block: 1rem;
+  /* height: var(--carousel-image-height); */
   list-style: none;
   display: flex;
   gap: var(--carousel-gap);
   overflow: auto;
 
-  border: 1px solid rgb(214, 67, 67);
+  /* border: 1px solid rgb(214, 67, 67); */
 
   scrollbar-width: none;
   scroll-snap-type: x mandatory;
@@ -38,14 +40,20 @@ body {
 }
 
 .carousel__slide {
+  height: var(--carousel-image-height);
   scroll-snap-align: start;
-  /* border: 1px solid forestgreen; */
+}
+
+.carousel__slide a {
+  border-radius: var(--carousel-image-border-radius);
+  overflow: hidden;
 }
 
 .carousel__image {
   display: block;
   width: var(--carousel-image-width);
-  /* border: 2px solid red; */
+  height: var(--carousel-image-height);
+  border-radius: var(--carousel-image-border-radius);
 }
 
 /* CAROUSEL BUTTONS */
@@ -63,10 +71,17 @@ body {
   background-color: black;
   border: none;
   border-radius: 50%;
+  cursor: pointer;
 }
 
-.carousel-button-invalid,
-.carousel-button-invalid:hover {
+@media (hover: hover) and (pointer: fine) {
+  .carousel__button:hover {
+    background-color: #755cde;
+  }
+}
+
+.carousel__button-invalid,
+.carousel__button-invalid:hover {
   background-color: rgb(141, 141, 141) !important;
   opacity: 0.7 !important;
   cursor: auto !important;
