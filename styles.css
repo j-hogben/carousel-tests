@@ -92,21 +92,6 @@ body {
   cursor: auto !important;
 }
 
-/* DISPLAY FOR CURRENT SLIDE INDEX */
-.indexDisplay {
-  margin-top: 3rem;
-  height: 4rem;
-  width: 6rem;
-  border: 4px solid rgb(214, 67, 67);
-  border-radius: 0.5rem;
-  margin-inline: auto;
-  font-size: 2rem;
-  font-weight: bold;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 @media (min-width: 640px) {
   :root {
     --carousel-image-height: 270px;

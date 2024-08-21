@@ -13,9 +13,8 @@ let slideWidth;
 const scrollToPrevSlide = () => {
   if (currentIndex > 0) {
     currentIndex--;
-    currentIndexDisplay.textContent = currentIndex;
-    styleInvalidCarouselNavBtns(currentIndex);
     carousel.scrollLeft -= slideWidth;
+    setTimeout(() => styleInvalidCarouselNavBtns(currentIndex), 100);
   }
 };
 
@@ -24,9 +23,8 @@ const scrollToPrevSlide = () => {
 const scrollToNextSlide = () => {
   if (currentIndex < slides.length - 1) {
     currentIndex++;
-    currentIndexDisplay.textContent = currentIndex;
-    styleInvalidCarouselNavBtns(currentIndex);
     carousel.scrollLeft += slideWidth;
+    setTimeout(() => styleInvalidCarouselNavBtns(currentIndex), 100);
   }
 };
 
@@ -38,14 +36,9 @@ const updateCurrentIndex = () => {
   const newIndex = Math.round(scrollLeft / slideWidth);
   if (newIndex !== currentIndex) {
     currentIndex = newIndex;
-    styleInvalidCarouselNavBtns(currentIndex);
+    setTimeout(() => styleInvalidCarouselNavBtns(currentIndex), 100);
   }
-  currentIndexDisplay.textContent = newIndex;
 };
-
-// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
-
-// FUNCTION
 
 // ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
 
@@ -62,14 +55,14 @@ const updateSlideDimensions = () => {
 // FUNCTION TO ADD INVALID BUTTON STYLE DEPENDING ON CURRENT INDEX
 const styleInvalidCarouselNavBtns = (index) => {
   /* IF INDEX IS 0 (FIRST SLIDE SELECTED), INVALIDATE THE
-  'PREVIOUS' CAROUSEL NAVIGATION BUTTON */
+    'PREVIOUS' CAROUSEL NAVIGATION BUTTON */
   if (index === 0) {
     carouselPrev.classList.add('carousel__button-invalid');
   } else {
     carouselPrev.classList.remove('carousel__button-invalid');
   }
   /* IF INDEX IS LAST SLIDE, INVALIDATE THE 'NEXT' 
-  CAROUSEL NAVIGATION BUTTON */
+    CAROUSEL NAVIGATION BUTTON */
   if (index === slides.length - 1) {
     carouselNext.classList.add('carousel__button-invalid');
   } else {
