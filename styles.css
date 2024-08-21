@@ -65,6 +65,13 @@ body {
   border-radius: 50%;
 }
 
+.carousel-button-invalid,
+.carousel-button-invalid:hover {
+  background-color: rgb(141, 141, 141) !important;
+  opacity: 0.7 !important;
+  cursor: auto !important;
+}
+
 /* DISPLAY FOR CURRENT SLIDE INDEX */
 .indexDisplay {
   margin-top: 3rem;
