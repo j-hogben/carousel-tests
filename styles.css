@@ -34,14 +34,17 @@ body {
 
   /* border: 1px solid rgb(214, 67, 67); */
 
+  /* position: relative; */
   scrollbar-width: none;
   scroll-snap-type: x mandatory;
   scroll-padding-inline: var(--carousel-padding-inline);
+  scroll-behavior: smooth;
 }
 
 .carousel__slide {
   height: var(--carousel-image-height);
   scroll-snap-align: start;
+  position: relative;
 }
 
 .carousel__slide a {
